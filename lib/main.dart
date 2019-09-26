@@ -17,13 +17,59 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Jabba the jutt'),
         ),
-        body: SnackBarPage(),
+        body: Botones(),
+        drawer: Menu(),
       ),
     );
   }
 }
 
-class SnackBarPage extends StatelessWidget {
+class Menu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        // Important: Remove any padding from the ListView.
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            child: Text('Animales'),
+            decoration: BoxDecoration(
+              color: Colors.cyan,
+            ),
+          ),
+          ListTile(
+            title: Text('Perrito'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Gatito'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Ratoncito'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Conejito'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+}
+
+class Botones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
